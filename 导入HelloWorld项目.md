@@ -9,7 +9,7 @@
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
-    }
+    	}
 	并且将"allprojects"里面加多一个"google()"
 	如下：
 	allprojects {

@@ -1,3 +1,4 @@
+> HelloWorld项目里面有三个app，分别是Hello1、Hello2、Hello3。为了区分这三个app在栈内的情况我分别在三个.java文件里面定义了一个私有静态的全局变量计数是Hello1(2、3)的第几个 app入栈和销毁
 > 整个过程一直点击按钮跳转生产app入栈顺序分别是第一个Hello1、第一个Hello2、第一个Hello3、第二个Hello2、第二个Hello3，然后按返回的时候就是app停下来并且销毁，直到栈内无app即任务结束。具体Logcat截图如下
 
 >> 这是图片一

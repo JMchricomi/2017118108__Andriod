@@ -10,7 +10,11 @@
         android:theme="@style/AppTheme">
         <activity android:name=".Hello3"></activity>
         <activity android:name=".Hello2" />
-        <activity android:name=".HelloWorldActivity">
+        <activity
+            android:name=".Hello1"
+            android:launchMode="standard">//singleTask(重新再点击回到H1的时候就会把其他栈顶的弹走)
+            //和singleTop(新创建一个H1到栈顶)区别
+            //standard模式就是最开始那个模式
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -7,18 +7,22 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
-public class Hello2 extends AppCompatActivity implements View.OnClickListener {
+public class Hello1 extends AppCompatActivity
+        implements View.OnClickListener {
 
-    private static final String TAG = "Hello2";
-    private static int count2 = 0;
+
+    private static final String TAG = "HelloWorldActivity";  //TAG是一个对象引用
+    private static int count1 = 0;
+    private static int objCount = 0;
+    private int mObjCount;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_hello2);
-        count2++;
-        Log.d(TAG, "onCreate execute" + " 这是栈内第" + count2 + "个Hello2");
-        setTitle("Hello2");
+        setContentView(R.layout.hello_world_layout);
+        count1++;
+        Log.d(TAG, "onCreate execute" + " 这是栈内第" + count1 + "个Hello1");
+        setTitle("Hello1");
         settupButtons();
 
     }
@@ -26,45 +30,47 @@ public class Hello2 extends AppCompatActivity implements View.OnClickListener {
     @Override
     protected void onStart() {
         super.onStart();
-        Log.d(TAG, "onStart" + " 这是栈内第" + count2 + "个Hello2");
+        Log.d(TAG, "onStart" + " 这是栈内第" + count1 + "个Hello1");
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-        Log.d(TAG, "onPause" + " 这是栈内第" + count2 + "个Hello2");
+        Log.d(TAG, "onPause" + " 这是栈内第" + count1 + "个Hello1");
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        Log.d(TAG, "onResume" + " 这是栈内第" + count2 + "个Hello2");
+        Log.d(TAG, "onResume" + " 这是栈内第" + count1 + "个Hello1");
     }
 
     @Override
     protected void onPostResume() {
         super.onPostResume();
-        Log.d(TAG, "onPostResume" + " 这是栈内第" + count2 + "个Hello2");
+        Log.d(TAG, "onPostResume" + " 这是栈内第" + count1 + "个Hello1");
     }
 
     @Override
     protected void onStop() {
         super.onStop();
-        Log.d(TAG, "onStop" + " 这是栈内第" + count2 + "个Hello2");
+        Log.d(TAG, "onStop" + " 这是栈内第" + count1 + "个Hello1");
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        Log.d(TAG, "onDestroy" + " 这是栈内第" + count2 + "个Hello2");
-        count2--;
+        Log.d(TAG, "onDestroy" + " 这是栈内第" + count1 + "个Hello1");
+        count1--;
     }
 
-    @Override
-    public void onClick(View v) {
+    @Override       //捕捉谁谁谁被点击了
+    public void onClick(View v) { //v是触发被点击的
+
         Intent intent;
+
         if (v.getId() == R.id.button1) {
-            intent = new Intent(this, HelloWorldActivity.class);
+            intent = new Intent(Hello1.this, Hello1.class);
             startActivity(intent);
         }
         if (v.getId() == R.id.button2) {
@@ -78,7 +84,8 @@ public class Hello2 extends AppCompatActivity implements View.OnClickListener {
     }
 
     private void settupButtons() {
-        Button b;
+        Button b;    //声明一个Button的对象
+
         b = (Button) findViewById(R.id.button1);
         b.setOnClickListener(this);  //this是本类的实例对象，它是实现Listener的监听
         b = (Button) findViewById(R.id.button2);
